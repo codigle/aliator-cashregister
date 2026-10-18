@@ -8,6 +8,15 @@
 
 **Live demo:** https://cashregister.aliator.com/
 
+## Watch the demo / デモ動画
+
+[![Aliator CashRegister — project demo (YouTube)](https://img.youtube.com/vi/K00qFp7NA4k/hqdefault.jpg)](https://www.youtube.com/watch?v=K00qFp7NA4k)
+
+▶ **[Watch the Aliator CashRegister demo on YouTube](https://www.youtube.com/watch?v=K00qFp7NA4k)**  
+▶ **[Aliator CashRegister のデモ動画を見る](https://www.youtube.com/watch?v=K00qFp7NA4k)**
+
+This video accompanies the Java/Spring Boot restaurant system and Raspberry Pi hardware portfolio. Further photos of the touchscreen and printer will be added to the [media gallery](media/README.md).
+
 ## Features / 主な機能
 
 - **Restaurant management / 店舗管理:** tenant-isolated owner accounts, menu editing, tables and QR codes, printer settings.
@@ -75,7 +84,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the workflow and boundaries.
 
 The hardware side includes a **Raspberry Pi 4 + 7-inch touchscreen**, Chromium kiosk under **labwc/Wayland**, independent Java **Print Bridge** and **Print Agent** services, and a **Zjiang ZJ-9220 USB printer**. The demo prints Japanese monochrome bitmap tickets on **58 mm continuous roll (GAP 0)**, with variable ticket length calculated from text content. One physical printer can be granted to more than one authorized restaurant.
 
-Read [Raspberry Pi Integration](raspberry-pi/README.md), the bilingual [Development Journey](docs/DEVELOPMENT-JOURNEY.md), and [Demo Photos/Video](media/README.md). Hardware photos and a walkthrough video will be added by the project owner.
+Read [Raspberry Pi Integration](raspberry-pi/README.md), the bilingual [Development Journey](docs/DEVELOPMENT-JOURNEY.md), and [Demo Photos/Video](media/README.md). A [demo video](https://www.youtube.com/watch?v=K00qFp7NA4k) is available; hardware photos will be added by the project owner.
 
 ## Repository publication status
 
