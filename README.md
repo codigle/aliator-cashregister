@@ -70,6 +70,13 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the workflow and boundaries.
 5. Cashier selects the table, completes a **simulated** payment and optionally queues a receipt.
 6. Owner views tenant-scoped reports and manages menu languages.
 
+
+## Raspberry Pi demonstration / Raspberry Pi 実機デモ
+
+The hardware side includes a **Raspberry Pi 4 + 7-inch touchscreen**, Chromium kiosk under **labwc/Wayland**, independent Java **Print Bridge** and **Print Agent** services, and a **Zjiang ZJ-9220 USB printer**. The demo prints Japanese monochrome bitmap tickets on **58 mm continuous roll (GAP 0)**, with variable ticket length calculated from text content. One physical printer can be granted to more than one authorized restaurant.
+
+Read [Raspberry Pi Integration](raspberry-pi/README.md), the bilingual [Development Journey](docs/DEVELOPMENT-JOURNEY.md), and [Demo Photos/Video](media/README.md). Hardware photos and a walkthrough video will be added by the project owner.
+
 ## Repository publication status
 
 **Documentation is published first.** The current live Java/frontend/Pi source tree is being collected and sanitized before public upload. Earlier incremental deployment ZIPs are **not** a complete reproducible source release. Once the live snapshot is reviewed, buildable application code, tests and local setup instructions will be added here.
