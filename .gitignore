@@ -1,0 +1,41 @@
+# Credentials and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*secret*
+*token-backup*
+
+# DB snapshots, private data and logs
+*.dump
+*.db
+*.sqlite*
+*.sql
+*.sql.gz
+*.backup
+*.log
+backups/
+logs/
+spool/
+private/
+
+# Build outputs
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+.venv/
+__pycache__/
+*.pyc
+
+# Editor/system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
