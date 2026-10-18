@@ -84,7 +84,23 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the workflow and boundaries.
 
 The hardware side includes a **Raspberry Pi 4 + 7-inch touchscreen**, Chromium kiosk under **labwc/Wayland**, independent Java **Print Bridge** and **Print Agent** services, and a **Zjiang ZJ-9220 USB printer**. The demo prints Japanese monochrome bitmap tickets on **58 mm continuous roll (GAP 0)**, with variable ticket length calculated from text content. One physical printer can be granted to more than one authorized restaurant.
 
-Read [Raspberry Pi Integration](raspberry-pi/README.md), the bilingual [Development Journey](docs/DEVELOPMENT-JOURNEY.md), and [Demo Photos/Video](media/README.md). A [demo video](https://www.youtube.com/watch?v=K00qFp7NA4k) is available; hardware photos will be added by the project owner.
+Read [Raspberry Pi Integration](raspberry-pi/README.md), the bilingual [Development Journey](docs/DEVELOPMENT-JOURNEY.md), and [Demo Photos/Video](media/README.md). A [demo video](https://www.youtube.com/watch?v=K00qFp7NA4k) and actual hardware photos are available below.
+
+## Hardware gallery / 実機写真
+
+These are photographs of the **actual Raspberry Pi touch kiosk and USB printer** used for this demo, not rendered mockups.
+
+| 7-inch touchscreen / 7インチ画面 | Japanese receipt / 日本語レシート |
+| :---: | :---: |
+| [![Raspberry Pi touchscreen dashboard](media/images/raspberry-pi-dashboard-handheld.webp)](media/images/raspberry-pi-dashboard-handheld.webp) | [![Japanese 58 mm demo receipt](media/images/receipt-japanese-closeup.webp)](media/images/receipt-japanese-closeup.webp) |
+| **Touch kiosk:** Chromium + labwc, responsive restaurant tiles | **Receipt:** variable length, Japanese bitmap text, simulated QR payment |
+
+| USB printer / USBプリンター | Workspace screen / 店舗管理画面 |
+| :---: | :---: |
+| [![ZJ-9220 printer outputting a demo receipt](media/images/zj9220-printer-receipt.webp)](media/images/zj9220-printer-receipt.webp) | [![Restaurant workspace displayed on Raspberry Pi](media/images/raspberry-pi-workspace-screen.webp)](media/images/raspberry-pi-workspace-screen.webp) |
+| **Printing:** Raspberry Pi Java bridge/agent → USB ZJ-9220 | **Interface:** Japanese workspace on the 7-inch display |
+
+日本語: Raspberry Pi 4と7インチタッチ画面、Java製印刷ブリッジ、USB接続プリンターを使用した実機デモです。58 mm連続ロール紙に日本語レシートを印刷しています。レシートは**決済・税処理を伴わないデモ**です。
 
 ## Repository publication status
 
