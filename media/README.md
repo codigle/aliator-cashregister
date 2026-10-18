@@ -1,6 +1,15 @@
 # Demo Photos and Video / 写真・動画
 
-This directory is intentionally reserved for **user-provided** photographs and demo clips. No screenshots or hardware images are claimed to be uploaded yet.
+The project demo video is published on YouTube. Hardware photographs will be added here after they are supplied and reviewed.
+
+## Published demo video / 公開デモ動画
+
+[![Aliator CashRegister project demo](https://img.youtube.com/vi/K00qFp7NA4k/hqdefault.jpg)](https://www.youtube.com/watch?v=K00qFp7NA4k)
+
+- **English:** [Watch Aliator CashRegister on YouTube](https://www.youtube.com/watch?v=K00qFp7NA4k)
+- **日本語:** [Aliator CashRegister 動作デモを見る](https://www.youtube.com/watch?v=K00qFp7NA4k)
+
+Photos of the 7-inch Raspberry Pi display, ZJ-9220 printer and Japanese 58 mm receipt are planned. No photos are represented as already uploaded.
 
 ## Suggested layout
 
