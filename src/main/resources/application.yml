@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  error:
+    include-message: never
+spring:
+  application:
+    name: cashregister
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/cashregister}
+    username: ${SPRING_DATASOURCE_USERNAME:cashregister}
+    password: ${SPRING_DATASOURCE_PASSWORD:cashregister}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update # Portfolio demo only; use Flyway migrations for production
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+logging:
+  level:
+    org.hibernate.SQL: WARN
+
+app:
+  staff-token: ${STAFF_TOKEN:}
+  demo-owner-password: ${DEMO_OWNER_PASSWORD:}
+  owner-invite-code: ${OWNER_INVITE_CODE:}
+  public-url: ${PUBLIC_BASE_URL:https://cashregister.aliator.com}
+
+registration:
+  email:
+    from: ${REGISTRATION_FROM:hello@aliator.com}
+  otp:
+    secret: ${REGISTRATION_OTP_SECRET:}
+  smtp:
+    host: ${REGISTRATION_SMTP_HOST:}
+    port: ${REGISTRATION_SMTP_PORT:587}
+    user: ${REGISTRATION_SMTP_USER:}
+    password-b64: ${REGISTRATION_SMTP_PASSWORD_B64:}

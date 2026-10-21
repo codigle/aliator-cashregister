@@ -1,0 +1,6 @@
+/* Local font stack: Pi must have a Korean font installed. No bundled font files. */
+html:lang(ko) body, html:lang(ko) button,html:lang(ko) input,
+html:lang(ko) select, html:lang(ko) textarea,html:lang(ko) .v9-dialog,
+html:lang(ko) .v9-product,html:lang(ko) .v9-choice,html:lang(ko) .cart-line{
+  font-family:'Noto Sans CJK KR','Noto Sans KR','Nanum Gothic','Malgun Gothic',sans-serif!important;
+}

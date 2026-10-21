@@ -1,0 +1,9 @@
+:root{color-scheme:light}
+.cr13-option{grid-template-columns:minmax(0,1fr) minmax(90px,110px) auto !important}
+#translation-status{background:#f5f7f4;border-radius:12px;padding:12px;min-height:58px;line-height:1.8;font-size:13px}
+#translation-status.needs-setup{color:#8a4611;background:#fff6ec}
+.v9-settings .card{border-radius:18px}
+.v9-settings button{min-height:44px}
+.v9-settings .lang-row label{display:flex;align-items:center;gap:8px}
+@media(max-width:850px){.v9-settings{padding:12px}.v9-editor-group{padding:10px}.cr13-option{grid-template-columns:minmax(0,1fr) 95px auto!important}}
+@media(max-width:470px){.cr13-option{grid-template-columns:minmax(0,1fr) 85px auto!important}.v9-editor-group .v9-flex{gap:7px}}

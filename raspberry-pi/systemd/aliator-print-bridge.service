@@ -1,0 +1,23 @@
+[Unit]
+Description=Aliator CashRegister Java HTTPS to USB spool bridge
+After=network-online.target aliator-print-agent.service
+Wants=network-online.target
+Requires=aliator-print-agent.service
+
+[Service]
+Type=simple
+User=aliatorprint
+Group=aliatorprint
+WorkingDirectory=/opt/aliator-print-bridge
+EnvironmentFile=/etc/aliator-print-bridge.env
+ExecStart=/usr/bin/java -Xms16m -Xmx96m -jar /opt/aliator-print-bridge/aliator-print-bridge.jar
+Restart=on-failure
+RestartSec=8
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/aliator-print-agent
+
+[Install]
+WantedBy=multi-user.target

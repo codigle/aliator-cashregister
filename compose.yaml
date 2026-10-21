@@ -1,0 +1,53 @@
+name: aliator-cashregister
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cashregister
+      POSTGRES_USER: cashregister
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Copy .env.example to .env and set DB_PASSWORD}
+    volumes:
+      - cashregister_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cashregister -d cashregister"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks: [cashregister_net]
+    security_opt: ["no-new-privileges:true"]
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      CASHREGISTER_V9_SEED_TEST: ${CASHREGISTER_V9_SEED_TEST:-false}
+      CASHREGISTER_TEST_SEED_EMAIL: ${CASHREGISTER_TEST_SEED_EMAIL:-}
+      CODIGLE_TRANSLATION_URL: ${CODIGLE_TRANSLATION_URL:-}
+      CODIGLE_TRANSLATION_TOKEN: ${CODIGLE_TRANSLATION_TOKEN:-}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/cashregister
+      SPRING_DATASOURCE_USERNAME: cashregister
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD missing}
+      SERVER_FORWARD_HEADERS_STRATEGY: framework
+      STAFF_TOKEN: ${STAFF_TOKEN:?STAFF_TOKEN missing}
+      DEMO_OWNER_PASSWORD: ${DEMO_OWNER_PASSWORD:?DEMO_OWNER_PASSWORD missing}
+      OWNER_INVITE_CODE: ${OWNER_INVITE_CODE:?OWNER_INVITE_CODE missing}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://cashregister.aliator.com}
+      REGISTRATION_SMTP_HOST: ${REGISTRATION_SMTP_HOST:?registration SMTP host missing}
+      REGISTRATION_SMTP_PORT: '587'
+      REGISTRATION_SMTP_USER: ${REGISTRATION_SMTP_USER:?registration SMTP user missing}
+      REGISTRATION_SMTP_PASSWORD_B64: ${REGISTRATION_SMTP_PASSWORD_B64:?registration SMTP credential missing}
+      REGISTRATION_FROM: ${REGISTRATION_FROM:?registration sender missing}
+      REGISTRATION_OTP_SECRET: ${REGISTRATION_OTP_SECRET:?registration OTP secret missing}
+    ports:
+      - "127.0.0.1:${APP_PORT:-18761}:8080"
+    networks: [cashregister_net]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 768m
+volumes:
+  cashregister_db:
+networks:
+  cashregister_net:
+    driver: bridge

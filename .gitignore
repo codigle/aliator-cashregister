@@ -1,4 +1,4 @@
-# Credentials and secrets
+# Local secrets, real identities and printer credentials
 .env
 .env.*
 !.env.example
@@ -7,10 +7,8 @@
 *.p12
 *.pfx
 *credentials*
-*secret*
 *token-backup*
-
-# DB snapshots, private data and logs
+# Databases, receipts, spool and logs
 *.dump
 *.db
 *.sqlite*
@@ -18,12 +16,11 @@
 *.sql.gz
 *.backup
 *.log
-backups/
 logs/
+backups/
 spool/
 private/
-
-# Build outputs
+# Java and generated output
 **/target/
 *.class
 *.jar
@@ -32,10 +29,7 @@ private/
 .venv/
 __pycache__/
 *.pyc
-
-# Editor/system
 .idea/
 .vscode/
 .DS_Store
 Thumbs.db
-*.swp

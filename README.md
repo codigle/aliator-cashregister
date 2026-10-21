@@ -102,11 +102,23 @@ These are photographs of the **actual Raspberry Pi touch kiosk and USB printer**
 
 日本語: Raspberry Pi 4と7インチタッチ画面、Java製印刷ブリッジ、USB接続プリンターを使用した実機デモです。58 mm連続ロール紙に日本語レシートを印刷しています。レシートは**決済・税処理を伴わないデモ**です。
 
-## Repository publication status
+## Source code / ソースコード
 
-**Documentation is published first.** The current live Java/frontend/Pi source tree is being collected and sanitized before public upload. Earlier incremental deployment ZIPs are **not** a complete reproducible source release. Once the live snapshot is reviewed, buildable application code, tests and local setup instructions will be added here.
+The repository includes the **sanitized source snapshot** exported from the VPS after the V17 UI/localization update, together with the Raspberry Pi **Print Agent V15.1** and **Print Bridge V4** sources. It is not necessarily identical to later live deployments; notably the subsequent V18 desktop product-modal patch is **not included in this snapshot**.
 
-**Do not commit:** production `.env` files, email/API keys, printer bearer tokens, private logs, real customer/tenant records, DB dumps or backups. See [SECURITY.md](SECURITY.md).
+| Folder / file | Contents |
+| --- | --- |
+| [src/main/java](src/main/java) | Java 21 / Spring Boot APIs, authentication, orders, restaurant isolation, payment simulation, menu translation and print queues |
+| [src/main/resources/static](src/main/resources/static) | HTML, CSS, JavaScript and kiosk/guest/owner UI |
+| [raspberry-pi/print-agent](raspberry-pi/print-agent) | Java USB/TSPL receipt printing, bitmap Japanese text and dynamic ticket layout |
+| [raspberry-pi/print-bridge](raspberry-pi/print-bridge) | Java authenticated server polling and local print spool handoff |
+| [raspberry-pi/systemd](raspberry-pi/systemd) | Example Pi service configuration |
+| [pom.xml](pom.xml), [Dockerfile](Dockerfile), [compose.yaml](compose.yaml) | Maven build and reference container deployment |
+| [SOURCE-REVIEW.md](SOURCE-REVIEW.md) | Source origin, sanitization and limitations |
+
+For a development starting point, create your own `.env` based on [`.env.example`](.env.example) and then build with `docker compose build`; **a complete production deployment has not been validated from this snapshot**. The Pi kiosk startup script and separately hosted Codigle translation sidecar are not part of the exported Java source. No real-money processing is implemented.
+
+**Never commit:** production `.env` files, email/API keys, printer bearer tokens, logs, customer/tenant records or database backups. See [SECURITY.md](SECURITY.md).
 
 ## Known limits
 
